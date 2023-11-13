@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quick Math Calculator</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-size: medium;
+      }
+      table {
+        width: 25%;
+        margin: auto;
+        background-color: lightgray;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px 0px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+      }
+      #hasil {
+        background-color: white;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="2">
+          <input type="number" id="number1" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <input type="number" id="number2" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="add()">Add</button>
+        </td>
+        <td>
+          <button onclick="substact()">Substact</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick="multiply()">Multiply</button>
+        </td>
+        <td>
+          <button onclick="divide()">Divide</button>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <p id="hasil"></p>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function add() {
+        let x = Number(document.getElementById("number1").value);
+        let y = Number(document.getElementById("number2").value);
+        let result = x + y;
+        document.getElementById("hasil").innerHTML = "Hasil : " + result;
+      }
+      function substact() {
+        let x = Number(document.getElementById("number1").value);
+        let y = Number(document.getElementById("number2").value);
+        let result = x - y;
+        document.getElementById("hasil").innerHTML = "Hasil : " + result;
+      }
+      function multiply() {
+        let x = Number(document.getElementById("number1").value);
+        let y = Number(document.getElementById("number2").value);
+        let result = x * y;
+        document.getElementById("hasil").innerHTML = "Hasil : " + result;
+      }
+      function divide() {
+        let x = Number(document.getElementById("number1").value);
+        let y = Number(document.getElementById("number2").value);
+        let result = x / y;
+        document.getElementById("hasil").innerHTML = "Hasil : " + result;
+      }
+    </script>
+  </body>
+</html>
