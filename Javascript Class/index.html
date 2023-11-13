@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animal and Dog Classes</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(215, 215, 215);
+      }
+
+      .container {
+        width: 100%;
+        margin: auto;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      input {
+        box-sizing: border-box;
+        margin: 10px 0px;
+      }
+
+      input[type="text"] {
+        font-size: larger;
+        width: 100%;
+        padding: 10px;
+      }
+
+      button {
+        font-size: large;
+        padding: 10px 20px;
+        background-color: rgb(48, 179, 48);
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: green;
+      }
+
+      .hasil {
+        box-sizing: border-box;
+        width: 100%;
+        background-color: white;
+      }
+
+      #hasil {
+        padding: 10px;
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Animal Sound Simulator</h1>
+      <input type="text" id="nama" placeholder="Enter animal name" />
+      <button onclick="suara()">Make Sounds</button>
+      <p id="hasil"></p>
+    </div>
+
+    <script>
+      class animal {
+        constructor(name, sound) {
+          this.name = name;
+          this.sound = sound;
+        }
+        static sounds() {
+          return "sounds ";
+        }
+      }
+
+      const cat = new animal("cat ", "miau ");
+      const dog = new animal("dog ", "gukk ");
+      const cow = new animal("cow ", "mooo ");
+
+      function suara() {
+        const x = document.getElementById("nama").value;
+        if (x.toLowerCase() == "cat") {
+          document.getElementById("hasil").innerHTML =
+            cat.name + animal.sounds() + cat.sound;
+        } else if (x.toLowerCase() == "dog"){
+          document.getElementById("hasil").innerHTML =
+            dog.name + animal.sounds() + dog.sound;
+        } else if (x.toLowerCase() == "cow"){
+          document.getElementById("hasil").innerHTML =
+            cow.name + animal.sounds() + cow.sound;
+        } else {
+          document.getElementById("hasil").innerHTML = x + " unknown sound ";
+        }
+      }
+    </script>
+  </body>
+</html>
